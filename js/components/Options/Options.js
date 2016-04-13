@@ -17,8 +17,15 @@ export default class Options extends React.Component {
 	join() {
 		var name = document.getElementById('user-name').value;
 		var room = document.getElementById('room').value;
-		if (name && room) {
+
+		var exists = this.props.options.rooms ? this.props.options.rooms.find((el, i, arr) => {
+			return room == this.props.options.roomTitle;
+		}) : false;
+
+		if (name && room && !exists) {
 			api.join(name, room);
+			document.getElementById('user-name').value = null;
+			document.getElementById('room').value = null;
 		}
 	}
 
