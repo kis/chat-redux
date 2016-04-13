@@ -1,0 +1,71 @@
+.chess-options {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 300px;
+	height: 100vh;
+	background-color: #FFFCEA;
+	border-right: 2px solid #CEAD7C;
+
+	.tabs {
+		display: table;
+		width: 300px;
+		a {
+			display: table-cell;
+    		padding: 20px 50px;
+			text-decoration: none;
+			cursor: pointer;
+			background: #EAE6D5;
+			color: #B37A26;
+
+			&.tab-active {
+				background: #EAE7B3;
+			}
+
+			&:hover {
+				background: #EAE7B3;
+			}
+		}
+	}
+
+	.input-style {
+		height: 40px;
+		outline: none;
+		background: beige;
+    	border: 0px;
+	}
+
+	.moving-style {
+		text-align: center;
+		padding: 20px;
+		color: #7D4B00;
+
+		&.hidden {
+			visibility: hidden;
+		}
+	}
+
+	.button-style {
+		text-align: center;
+		padding: 10px;
+
+		button {
+			text-align: center;
+			padding: 18px;
+			background-color: #E6E1A7;
+			color: #7D4B00;
+			border: 0px;
+			outline: none;
+
+			&:hover {
+				cursor: pointer;
+				background-color: #CEAD7C;
+			}
+		}
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+}
