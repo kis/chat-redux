@@ -2,9 +2,7 @@ import { combineReducers } from 'redux';
 
 import * as actions from '../actions/actions';
 
-import Field from '../components/Logic/Field';
-
-var game = {
+var chat = {
   started: false,
   userName: null,
   roomId: null,
@@ -12,7 +10,7 @@ var game = {
   rooms: []
 };
 
-function options(state = game, action) {
+function options(state = chat, action) {
   switch (action.type) {
     case 'START_GAME':
     return {...state, started: true};
@@ -30,7 +28,7 @@ function options(state = game, action) {
                       rooms: rooms 
                     };
 
-    case 'END_GAME':
+    case 'DISCONNECT':
     return {...state, started: false};
 
     case 'SEND_MESSAGE':
@@ -46,27 +44,8 @@ function options(state = game, action) {
   }
 }
 
-var fieldInit = new Field();
-
-function field(state = fieldInit, action) {
-  switch (action.type) {
-    case 'GET_FIELD':
-    return {...state};
-
-    case 'MOVE_FIGURE_TO_CELL':
-    return {...state, data: action.field.data, black: !action.field.black};
-
-    case 'MOVE_FIGURE_BACK':
-    return {...state, data: action.oldField.data};
-
-    default:
-    return {...state};
-  }
-}
-
-const chessApp = combineReducers({
-  options,
-  field
+const chatApp = combineReducers({
+  options
 });
 
-export default chessApp;
+export default chatApp;

@@ -7,8 +7,8 @@
 6 silly lifecycle chess@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle chess@0.0.1~start: chess@0.0.1
 8 verbose lifecycle chess@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle chess@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/user/proj/chess/node_modules/.bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-10 verbose lifecycle chess@0.0.1~start: CWD: /home/user/proj/chess
+9 verbose lifecycle chess@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/user/proj/chat/node_modules/.bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+10 verbose lifecycle chess@0.0.1~start: CWD: /home/user/proj/chat
 11 silly lifecycle chess@0.0.1~start: Args: [ '-c', 'webpack&&node server2' ]
 12 silly lifecycle chess@0.0.1~start: Returned: code: 1  signal: null
 13 info lifecycle chess@0.0.1~start: Failed to exec start script
@@ -23,7 +23,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:821:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid chess@0.0.1
-16 verbose cwd /home/user/proj/chess
+16 verbose cwd /home/user/proj/chat
 17 error Linux 3.19.0-58-generic
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v5.5.0

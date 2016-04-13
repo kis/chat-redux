@@ -1,14 +1,15 @@
-import * as actions from '../actions/actions';
-
 import io from 'socket.io-client';
+
+import * as actions from '../actions/actions';
 
 import store from '../store/store';
 
 var socket = null;
 
-var host = (window.location.hostname.indexOf('localhost') !== -1) ? 
-			'http://localhost:8080' : 
-			'https://evening-basin-88080.herokuapp.com';
+const locally = 'http://localhost:8080';
+const heroku = 'https://evening-basin-88080.herokuapp.com';
+
+var host = (window.location.hostname.indexOf('localhost') !== -1) ? locally : heroku;
 
 function getSocket() {
 	if (!socket) {
@@ -33,21 +34,10 @@ getSocket().on('new message', (data) => {
 	});
 });
 
-getSocket().on('new move', (data) => {
-	store.dispatch({
-	    type: 'MOVE_FIGURE_TO_CELL',
-	    field: data
-	});
-});
-
-export function startGame(name, room) {
+export function join(name, room) {
 	getSocket().emit('new user', {name: name, room: room});
 }
 
 export function newMessage(user, message) {
 	getSocket().emit('new message', {user: user, msg: message});
-}
-
-export function newMove(obj) {
-	getSocket().emit('new move', obj);
 }

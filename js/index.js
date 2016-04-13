@@ -9,18 +9,13 @@ import store from './store/store';
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router';
 
 import App from './components/App';
-import Chat from './components/Main/Chat/Chat';
-import ChessField from './components/Main/ChessField/ChessField';
+import Chat from './components/Chat/Chat';
 
 const routes = {
   path: '/',
   component: App,
-  indexRoute: { component: ChessField },
+  indexRoute: { component: Chat },
   childRoutes: [
-    { 
-    	path: 'chess', 
-    	component: ChessField 
-    },
     {
     	path: 'chat',
       component: Chat

@@ -8,12 +8,13 @@
 
 	.rooms-box {
 		position: relative;
-		height: 58px;
+		height: 20%;
 		padding: 10px;
 		line-height: 45px;
 		word-wrap: break-word;
 		overflow-y: scroll;
     	overflow-x: hidden;
+    	box-sizing: border-box;
 
 		span {
 			padding: 8px;
@@ -27,7 +28,7 @@
 	.message-box {
 		position: relative;
 		width: 100%;
-		height: calc(100% - 108px);
+		height: calc(100% - 20% - 50px);
 		background-color: beige;
 		border-top: 1px solid rgb(206, 173, 124);
 		border-bottom: 1px solid rgb(206, 173, 124);

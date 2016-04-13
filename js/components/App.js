@@ -3,9 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-import ChessField from '../components/Main/ChessField/ChessField';
-import Options from '../components/Main/Options/Options';
-import Chat from '../components/Main/Chat/Chat';
+import Options from '../components/Options/Options';
+import Chat from '../components/Chat/Chat';
 
 class App extends Component {
   render() {
@@ -21,8 +20,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  options: state.options,
-  field: state.field
+  options: state.options
 });
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});

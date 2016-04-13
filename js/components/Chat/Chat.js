@@ -1,9 +1,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../../actions/actions';
+import * as actions from '../../actions/actions';
 
-import * as api from '../../../api/api'; 
+import * as api from '../../api/api'; 
 
 import './chat.css';
 

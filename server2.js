@@ -23,10 +23,6 @@ io.on('connection', function (socket) {
 		io.sockets.emit('new message', data);
 	});
 
-	socket.on('new move', function (move) {
-		io.sockets.emit('new move', move);
-	});
-
 	socket.on('new user', function (data) {
 		io.sockets.emit('new user', data);
 		// if (addedUser) return;
@@ -46,7 +42,6 @@ io.on('connection', function (socket) {
 	});
 
 	socket.on('disconnect', function () {
-		io.sockets.emit('disconnect user', data);
 		/*if (addedUser) {
 			--numUsers;
 
