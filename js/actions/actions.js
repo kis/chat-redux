@@ -19,29 +19,3 @@ export function sendMessage(user, message) {
     message: message
   }
 }
-
-export function initField() {
-  return {
-    type: 'INIT_FIELD'
-  }
-}
-
-export function getField() {
-  return {
-    type: 'GET_FIELD'
-  }
-}
-
-export function moveFigureToCell(field) {
-  return {
-    type: 'MOVE_FIGURE_TO_CELL',
-    field: field
-  }
-}
-
-export function moveFigureBack(oldField) {
-  return {
-    type: 'MOVE_FIGURE_BACK',
-    oldField: oldField
-  }
-}
