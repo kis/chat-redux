@@ -41,10 +41,16 @@
 	}
 
 	.input-style {
+		width: 50%;
 		height: 40px;
 		outline: none;
 		background: beige;
     	border: 0px;
+    	padding: 10px 20px;
+	}
+
+	.error-style {
+		color: red;
 	}
 
 	.moving-style {
@@ -62,8 +68,10 @@
 		padding: 10px;
 
 		button {
+			margin-top: 20px;
 			text-align: center;
-			padding: 18px;
+			padding: 20px;
+			width: 50%;
 			background-color: #E6E1A7;
 			color: #7D4B00;
 			border: 0px;

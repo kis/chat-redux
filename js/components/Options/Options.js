@@ -15,17 +15,19 @@ export default class Options extends React.Component {
 	}
 
 	join() {
-		var name = document.getElementById('user-name').value;
-		var room = document.getElementById('room').value;
+		var username = document.getElementById('user-name').value;
 
-		var exists = this.props.options.rooms ? this.props.options.rooms.find((el, i, arr) => {
-			return room == this.props.options.roomTitle;
+		var exists = this.props.options.users ? this.props.options.users.find((el, i, arr) => {
+			return username == this.props.options.userName;
 		}) : false;
 
-		if (name && room && !exists) {
-			api.join(name, room);
+		if (exists) {
+			
+		}
+
+		if (username && !exists) {
+			api.join(username);
 			document.getElementById('user-name').value = null;
-			document.getElementById('room').value = null;
 		}
 	}
 
@@ -43,12 +45,12 @@ export default class Options extends React.Component {
 
 		return (
 			<div className="options">
-				<div className="users-online">{this.props.options.userCount} <span className="sup-text">users online</span></div>
+				<div className="users-online">{this.props.options.usersCount} <span className="sup-text">users online</span></div>
 
 				<div className={startStyle}>
-					<input className="input-style" id="user-name" type="text" placeholder="Your Name" /><br/><br/>
-					<input className="input-style" id="room" type="text" placeholder="Room" /><br/><br/>
-					<button onClick={join}>Join</button>
+					<input className="input-style" id="user-name" type="text" placeholder="Your Name" />
+					<div className="error-style">Username already exists</div>
+					<button className="" onClick={join}>Join</button>
 				</div>
 				<div className={endStyle}>
 					<button onClick={disconnect}>Disconnect</button>

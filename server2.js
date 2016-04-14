@@ -10,9 +10,9 @@ server.listen(port, function () {
 
 app.use(express.static(__dirname + '/'));
 
-app.get('*', function (req, res){
+app.get('*', function (req, res) {
   	res.sendFile(__dirname + '/index.html');
-})
+});
 
 var numUsers = 0;
 

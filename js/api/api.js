@@ -27,15 +27,15 @@ getSocket().on('user disconnected', (data) => {
 });
 
 getSocket().on('new user', (data) => {
-	store.dispatch(actions.addUser(data.name, data.room));
+	store.dispatch(actions.addUser(data.username));
 });
 
 getSocket().on('new message', (data) => {
 	store.dispatch(actions.sendMessage(data.user, data.msg));
 });
 
-export function join(name, room) {
-	getSocket().emit('new user', {name: name, room: room});
+export function join(username) {
+	getSocket().emit('new user', {username: username});
 }
 
 export function newMessage(user, message) {

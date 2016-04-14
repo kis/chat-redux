@@ -3,34 +3,33 @@ import { combineReducers } from 'redux';
 import * as actions from '../actions/actions';
 
 var chat = {
-  userCount: 0,
-  started: false,
+  usersCount: 0,
+  userId: null,
   userName: null,
-  roomId: null,
-  rooms: []
+  users: []
 };
 
 function options(state = chat, action) {
   switch (action.type) {
     case 'NEW_CONNECTION':
-    return {...state, userCount: action.numUsers};
+    return {...state, usersCount: action.numUsers};
 
     case 'USER_DISCONNECTED':
-    return {...state, userCount: action.numUsers};
+    return {...state, usersCount: action.numUsers};
 
     case 'START_GAME':
     return {...state, started: true};
 
     case 'ADD_USER':
-    var roomId = Math.random()* (99 - 1) + 1;
-    var rooms = [...state.rooms, {
-      id: roomId,
-      title: action.roomTitle,
+    var userId = Math.random()* (99 - 1) + 1;
+    var users = [...state.users, {
+      id: userId,
+      username: action.username,
       messages: [{msg: action.userName + " is connected"}]
     }];
-    return {...state, userName: action.userName,
-                      roomId: roomId,  
-                      rooms: rooms 
+    return {...state, userId: userId,
+                      userName: action.username,
+                      users: users 
                     };
 
     case 'SEND_MESSAGE':

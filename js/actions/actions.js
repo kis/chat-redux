@@ -12,11 +12,10 @@ export function userDisconnected(numUsers) {
   }
 }
 
-export function addUser(name, room) {
+export function addUser(username) {
   return {
     type: 'ADD_USER',
-    userName: name,
-    roomTitle: room
+    username: username
   }
 }
 

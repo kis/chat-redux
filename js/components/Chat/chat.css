@@ -6,7 +6,7 @@
 	height: 100%;
 	box-sizing: border-box;
 
-	.rooms-box {
+	.users-box {
 		position: relative;
 		height: 20%;
 		padding: 10px;
@@ -17,12 +17,17 @@
     	background: #F7F7F6;
     	box-sizing: border-box;
 
-		span {
+		.user {
 			padding: 8px;
     		margin: 8px;
 			background: #2196F3;
 			color: white;
 			border-radius: 15px;
+
+			&:hover {
+				cursor: pointer;
+				background: #0760A7;
+			}
 		}
 	}
 

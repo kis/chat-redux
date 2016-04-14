@@ -53,9 +53,9 @@ class Chat extends React.Component {
 
 		return ( 
 			<div className='chat'>
-				<div className='rooms-box'>
-					{this.props.options.rooms.map((room, i) => {
-						return <span key={i}>{room.title}</span>;
+				<div className='users-box'>
+					{this.props.options.users.map((user, i) => {
+						return <span className="user" key={i}>{user.username}</span>;
 					})}
 				</div>
 				<div className='message-box'>
