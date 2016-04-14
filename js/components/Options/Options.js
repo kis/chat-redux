@@ -42,7 +42,9 @@ export default class Options extends React.Component {
 		var disconnect = this.disconnect.bind(this);
 
 		return (
-			<div className="chess-options">
+			<div className="options">
+				<div className="users-online">{this.props.options.userCount} <span className="sup-text">users online</span></div>
+
 				<div className={startStyle}>
 					<input className="input-style" id="user-name" type="text" placeholder="Your Name" /><br/><br/>
 					<input className="input-style" id="room" type="text" placeholder="Room" /><br/><br/>

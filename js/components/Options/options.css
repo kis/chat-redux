@@ -1,4 +1,4 @@
-.chess-options {
+.options {
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -6,6 +6,18 @@
 	height: 100vh;
 	background-color: #FFFCEA;
 	border-right: 2px solid #CEAD7C;
+
+	.users-online {
+		text-align: center;
+		padding: 20px;
+		color: rgb(121, 69, 0);
+		font-size: 56pt;
+
+		.sup-text {
+			display: block;
+			font-size: 14pt;
+		}
+	}
 
 	.tabs {
 		display: table;

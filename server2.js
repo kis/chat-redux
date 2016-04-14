@@ -17,7 +17,7 @@ app.get('*', function (req, res){
 var numUsers = 0;
 
 io.on('connection', function (socket) {
-	console.log('next user connected')
+	io.emit('new connection', {numUsers: ++numUsers});
 
 	socket.on('new message', function (data) {
 		io.sockets.emit('new message', data);
@@ -25,32 +25,9 @@ io.on('connection', function (socket) {
 
 	socket.on('new user', function (data) {
 		io.sockets.emit('new user', data);
-		// if (addedUser) return;
-
-		// we store the username in the socket session for this client
-		/*socket.username = username;
-		++numUsers;
-		addedUser = true;
-		socket.emit('login', {
-			numUsers: numUsers
-		});
-		// echo globally (all clients) that a person has connected
-		socket.broadcast.emit('user joined', {
-			username: socket.username,
-			numUsers: numUsers
-		});*/
 	});
 
 	socket.on('disconnect', function () {
-		/*if (addedUser) {
-			--numUsers;
-
-	    	// echo globally that this client has left
-	    	socket.broadcast.emit('user left', {
-	    		username: socket.username,
-	    		numUsers: numUsers
-	    	});
-	    }*/
+		io.emit('user disconnected', {numUsers: --numUsers});
 	});
-
 });

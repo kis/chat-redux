@@ -3,15 +3,21 @@ import { combineReducers } from 'redux';
 import * as actions from '../actions/actions';
 
 var chat = {
+  userCount: 0,
   started: false,
   userName: null,
   roomId: null,
-  roomTitle: null,
   rooms: []
 };
 
 function options(state = chat, action) {
   switch (action.type) {
+    case 'NEW_CONNECTION':
+    return {...state, userCount: action.numUsers};
+
+    case 'USER_DISCONNECTED':
+    return {...state, userCount: action.numUsers};
+
     case 'START_GAME':
     return {...state, started: true};
 
@@ -24,12 +30,8 @@ function options(state = chat, action) {
     }];
     return {...state, userName: action.userName,
                       roomId: roomId,  
-                      roomTitle: action.roomTitle,
                       rooms: rooms 
                     };
-
-    case 'DISCONNECT':
-    return {...state, started: false};
 
     case 'SEND_MESSAGE':
     var rooms = state.rooms.map((el, i, arr) => {

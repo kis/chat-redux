@@ -1,3 +1,25 @@
+export function newConnection(numUsers) {
+  return {
+    type: 'NEW_CONNECTION',
+    numUsers: numUsers
+  }
+}
+
+export function userDisconnected(numUsers) {
+  return {
+    type: 'USER_DISCONNECTED',
+    numUsers: numUsers
+  }
+}
+
+export function addUser(name, room) {
+  return {
+    type: 'ADD_USER',
+    userName: name,
+    roomTitle: room
+  }
+}
+
 export function startGame(userName, roomTitle) {
   return {
     type: 'START_GAME',

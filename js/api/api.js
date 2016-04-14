@@ -18,20 +18,20 @@ function getSocket() {
 	return socket;
 }
 
+getSocket().on('new connection', (data) => {
+	store.dispatch(actions.newConnection(data.numUsers));
+});
+
+getSocket().on('user disconnected', (data) => {
+	store.dispatch(actions.userDisconnected(data.numUsers));
+});
+
 getSocket().on('new user', (data) => {
-	store.dispatch({
-		type: 'ADD_USER', 
-		userName: data.name, 
-		roomTitle: data.room
-	});
+	store.dispatch(actions.addUser(data.name, data.room));
 });
 
 getSocket().on('new message', (data) => {
-	store.dispatch({
-		type: 'SEND_MESSAGE', 
-		user: data.user, 
-		message: data.msg
-	});
+	store.dispatch(actions.sendMessage(data.user, data.msg));
 });
 
 export function join(name, room) {
