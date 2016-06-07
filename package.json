@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "chess game",
   "scripts": {
-    "start": "webpack&&node server2"
+    "start": "webpack&&node server2",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "dependencies": {
     "autoprefixer": "^6.3.4",
@@ -28,5 +29,8 @@
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.26.0"
+  }
 }

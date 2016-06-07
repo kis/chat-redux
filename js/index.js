@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -10,6 +12,8 @@ import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'reac
 
 import App from './components/App';
 import Chat from './components/Chat/Chat';
+
+// var str: number = 'hello world!';
 
 const routes = {
   path: '/',
